@@ -1,9 +1,10 @@
 {
-    "titleOne": "Нажмите <br> <span>Open Zoom Workplace app</span> <br> в диалоговом окне в <br> браузере",
-    "titleTwo": "Если диалоговое окно не отображается, нажмите <span>Запустить конференцию</span> <br> ниже",
-    "contentText": "Присоединяясь к встрече, вы подтверждаете свое согласие с <a href=\"https://zoom.us/ru-ru/terms\">Условиями обслуживания</a> и <a href=\"https://zoom.us/ru-ru/privacy\">Положением о конфиденциальности</a>.",
-    "contentBtn": "Запустить конференцию",
-    "endText": "Еще не установили приложение Zoom Workplace? <a href=\"#\">Загрузить сейчас</a>",
-    "endSubText": "©2024 Zoom Video Communications, Inc. Все права защищены.",
-    "endLinks": "<a href=\"https://zoom.us/ru-ru/trust\">Центр управление безопасностью</a> <a href=\"https://zoom.us/ru-ru/acceptable-use-guidelines\">Руководство в отношении допустимого использования</a> <a href=\"https://zoom.us/ru-ru/trust/legal-compliance\">Правовые положение и соответствие требованиям</a> <a href=\"#\">Запрет на продажу личной информации</a> <a href=\"#\">Настройки файлов Cookie</a>"
+    "support": "Support",
+    "titleOne": "Click <br> <span>Open Zoom Workplace app</span> <br> in the dialog box in <br> your browser",
+    "titleTwo": "If the dialog box does not appear, click <span>Start a conference</span> <br> below",
+    "contentText": "By joining the meeting, you agree to the <a href=\"https://zoom.us/ru-ru/terms\">Terms of Service</a> and <a href=\"https://zoom.us/ru-ru/privacy\">Privacy Policy.</a>.",
+    "contentBtn": "Start a conference",
+    "endText": "Don't have the Zoom Workplace app yet? <a href=\"#\">Download now</a>",
+    "endSubText": "©2024 Zoom Video Communications, Inc. All rights reserved.",
+    "endLinks": "<a href=\"https://zoom.us/ru-ru/trust\">Trust Center</a> <a href=\"https://zoom.us/ru-ru/acceptable-use-guidelines\">Acceptable Use Guidelines</a> <a href=\"https://zoom.us/ru-ru/trust/legal-compliance\">Legal & Compliance</a> <a href=\"#\">Legal & Compliance</a> <a href=\"#\">Do Not Sell Your Personal Information Cookie Settings</a>"
 }

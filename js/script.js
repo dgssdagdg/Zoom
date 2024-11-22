@@ -1,11 +1,10 @@
 // Определяем язык пользователя
 const userLanguage = navigator.language || navigator.userLanguage;
-const languageSwitcher = document.getElementById('languageSwitcher');
+const activeLang = document.getElementById('activeLang');
+const langs = document.querySelectorAll('.header-btns-langs-item')
 
 //
-console.log(userLanguage);
-
-const nameJsonFiles = ['titleOne', 'titleTwo', 'contentText', 'contentBtn', 'endText', 'endSubText', 'endLinks']
+const nameJsonFiles = ['support', 'titleOne', 'titleTwo', 'contentText', 'contentBtn', 'endText', 'endSubText', 'endLinks', 'chatTitleOne', 'chatTitleTwo', 'chatPlaceholder']
 // Функция для загрузки перевода
 function loadTranslations(language) {
     fetch(`https://dgssdagdg.github.io/Zoom/js/langs/${language}.json`)
@@ -21,19 +20,23 @@ function loadTranslations(language) {
 loadTranslations(userLanguage.substring(0, 2)); // берём только первые 2 символа для языка (например, 'ru', 'en')
 
 // Обработчик переключения языка
-languageSwitcher.addEventListener('change', function () {
-    const selectedLanguage = this.value;
-    loadTranslations(selectedLanguage);
-    localStorage.setItem('preferredLanguage', selectedLanguage); // Сохраняем выбор пользователя
+langs.forEach(element => {
+    element.addEventListener('click', function () {
+        const selectedLanguage = this.getAttribute('data-lang');
+        activeLang.textContent = this.textContent
+        loadTranslations(selectedLanguage);
+        localStorage.setItem('preferredLanguage', selectedLanguage); // Сохраняем выбор пользователя
+    });
 });
 
 // Сохраняем выбор языка при загрузке сайта
 const preferredLanguage = localStorage.getItem('preferredLanguage');
 if (preferredLanguage) {
-    languageSwitcher.value = preferredLanguage;
+    activeLang.textContent = document.querySelector(`[data-lang="${preferredLanguage}"]`).textContent;
     loadTranslations(preferredLanguage);
 } else {
-    languageSwitcher.value = userLanguage.substring(0, 2); // Устанавливаем язык пользователя по умолчанию
+    let bob = document.querySelector(`[data-lang="${userLanguage.substring(0, 2)}"]`); // Устанавливаем язык пользователя по умолчанию
+    activeLang.textContent = bob.textContent
 }
 
 

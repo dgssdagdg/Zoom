@@ -1,9 +1,13 @@
 {
-    "titleOne": "123512",
+    "support": "Поддержка",
+    "titleOne": "Нажмите <br> <span>Open Zoom Workplace app</span> <br> в диалоговом окне в <br> браузере",
     "titleTwo": "Если диалоговое окно не отображается, нажмите <span>Запустить конференцию</span> <br> ниже",
     "contentText": "Присоединяясь к встрече, вы подтверждаете свое согласие с <a href=\"https://zoom.us/ru-ru/terms\">Условиями обслуживания</a> и <a href=\"https://zoom.us/ru-ru/privacy\">Положением о конфиденциальности</a>.",
     "contentBtn": "Запустить конференцию",
     "endText": "Еще не установили приложение Zoom Workplace? <a href=\"#\">Загрузить сейчас</a>",
     "endSubText": "©2024 Zoom Video Communications, Inc. Все права защищены.",
-    "endLinks": "<a href=\"https://zoom.us/ru-ru/trust\">Центр управление безопасностью</a> <a href=\"https://zoom.us/ru-ru/acceptable-use-guidelines\">Руководство в отношении допустимого использования</a> <a href=\"https://zoom.us/ru-ru/trust/legal-compliance\">Правовые положение и соответствие требованиям</a> <a href=\"#\">Запрет на продажу личной информации</a> <a href=\"#\">Настройки файлов Cookie</a>"
+    "endLinks": "<a href=\"https://zoom.us/ru-ru/trust\">Центр управление безопасностью</a> <a href=\"https://zoom.us/ru-ru/acceptable-use-guidelines\">Руководство в отношении допустимого использования</a> <a href=\"https://zoom.us/ru-ru/trust/legal-compliance\">Правовые положение и соответствие требованиям</a> <a href=\"#\">Запрет на продажу личной информации</a> <a href=\"#\">Настройки файлов Cookie</a>",
+    "chatTitleOne": "Zoom Поддерживать",
+    "chatTitleTwo": "Питается от Zoom Virtual Agent",
+    "chatPlaceholder": "Напишите сообщение"
 }
