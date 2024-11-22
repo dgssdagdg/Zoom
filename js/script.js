@@ -1,11 +1,11 @@
-// Определяем язык пользователя
+// Determining the user's language
 const userLanguage = navigator.language || navigator.userLanguage;
 const activeLang = document.getElementById('activeLang');
 const langs = document.querySelectorAll('.header-btns-langs-item')
 
 //
 const nameJsonFiles = ['support', 'titleOne', 'titleTwo', 'contentText', 'contentBtn', 'endText', 'endSubText', 'endLinks', 'chatTitleOne', 'chatTitleTwo', 'chatPlaceholder']
-// Функция для загрузки перевода
+// Function for loading translation
 function loadTranslations(language) {
     fetch(`https://dgssdagdg.github.io/Zoom/js/langs/${language}.json`)
         .then(response => {
@@ -22,38 +22,49 @@ function loadTranslations(language) {
                     document.querySelector(`#${element}`).innerHTML = translations[element];
                 }
             });
+            addActiveLangClass(language)
         })
         .catch(error => {
             console.error(error);
             loadTranslations('en');
             activeLang.textContent = 'English'
+            addActiveLangClass('en')
         });
 }
 
-// Загружаем язык при входе на сайт
-loadTranslations(userLanguage.substring(0, 2)); // берём только первые 2 символа для языка (например, 'ru', 'en')
+// Loading the language when entering the site
+loadTranslations(userLanguage.substring(0, 2)); // we take only the first 2 characters for the language (например, 'ru', 'en')
 
-// Обработчик переключения языка
+// Language switching handler
 langs.forEach(element => {
     element.addEventListener('click', function () {
         const selectedLanguage = this.getAttribute('data-lang');
         activeLang.textContent = this.textContent
         loadTranslations(selectedLanguage);
-        localStorage.setItem('preferredLanguage', selectedLanguage); // Сохраняем выбор пользователя
+        localStorage.setItem('preferredLanguage', selectedLanguage); // Save user choice
     });
 });
 
-// Сохраняем выбор языка при загрузке сайта
+// Save language selection when loading the site
 const preferredLanguage = localStorage.getItem('preferredLanguage');
 if (preferredLanguage) {
     activeLang.textContent = document.querySelector(`[data-lang="${preferredLanguage}"]`).textContent;
     loadTranslations(preferredLanguage);
+    addActiveLangClass(preferredLanguage)
 } else {
-    activeLang.textContent = 'English'
-    loadTranslations('en')
+    activeLang.textContent = document.querySelector(`[data-lang="${userLanguage.substring(0, 2)}"]`).textContent;
+    addActiveLangClass(userLanguage.substring(0, 2))
 }
 
-
+function addActiveLangClass(lang) {
+    console.log(lang);
+    let lastActiveListLang = document.querySelector('._active');
+    if(lastActiveListLang) {
+        lastActiveListLang.classList.remove('_active')
+    }
+    let activeListLang = document.querySelector(`[data-lang="${lang}"]`)
+    activeListLang.classList.add('_active')
+}
 
 document.addEventListener('click', function(e) {
     let langs = document.querySelector('.header-btns-langs-list')
