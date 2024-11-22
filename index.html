@@ -19,9 +19,9 @@
                 <a id="support" href="#" class="header-btns-link">Поддержка</a>
                 <div class="header-btns-langs">
                     <p id="activeLang" class="header-btns-langs-active">Русский <span></span></p>
-                    <ul id="languageSwitcher" class="header-btns-langs-list">
-                        <li data-lang="en" class="header-btns-langs-item">English</li>
-                        <li data-lang="ru" class="header-btns-langs-item">Русский</li>
+                    <ul class="header-btns-langs-list">
+                        <li onclick="translateText('ru')" class="header-btns-langs-item">English</li>
+                        <li onclick="translateText('en')" class="header-btns-langs-item">Русский</li>
                     </ul>
                 </div>
             </div>
@@ -29,15 +29,15 @@
     </header>
     <main class="main">
         <div class="main-content">
-            <p id="titleOne" class="main-content-title _title">Нажмите <br> <span>Open Zoom Workplace app</span> <br> в диалоговом окне в <br> браузере</p>
-            <p id="titleTwo" class="_title">Если диалоговое окно не отображается, нажмите <span>Запустить конференцию</span> <br> ниже</p>
-            <p id="contentText" class="main-content-text">Присоединяясь к встрече, вы подтверждаете свое согласие c <a href="https://zoom.us/ru-ru/terms">Условиями обслуживания</a> и <a href="https://zoom.us/ru-ru/privacy">Положением о конфиденциальности</a></p>
-            <a id="contentBtn" href="#" class="main-content-btn">Запустить конференцию</a>
+            <p class="main-content-title _title">Нажмите <br> <span>Open Zoom Workplace app</span> <br> в диалоговом окне в <br> браузере</p>
+            <p class="_title">Если диалоговое окно не отображается, нажмите <span>Запустить конференцию</span> <br> ниже</p>
+            <p class="main-content-text">Присоединяясь к встрече, вы подтверждаете свое согласие c <a href="https://zoom.us/ru-ru/terms">Условиями обслуживания</a> и <a href="https://zoom.us/ru-ru/privacy">Положением о конфиденциальности</a></p>
+            <a href="#" class="main-content-btn">Запустить конференцию</a>
         </div>
         <div class="main-end">
-            <p id="endText" class="main-end-text">Еще не установили приложение Zoom Workplace? <a href="#">Загрузить сейчас</a></p>
-            <p id="endSubText" class="main-end-sub-text _text">©2024 Zoom Video Communications, Inc. Все права защищены.</p>
-            <p id="endLinks" class="main-end-sub-links _text">
+            <p class="main-end-text">Еще не установили приложение Zoom Workplace? <a href="#">Загрузить сейчас</a></p>
+            <p class="main-end-sub-text _text">©2024 Zoom Video Communications, Inc. Все права защищены.</p>
+            <p class="main-end-sub-links _text">
                 <a href="https://zoom.us/ru-ru/trust">Центр управление безопасностью</a>
                 <a href="https://zoom.us/ru-ru/acceptable-use-guidelines">Руководство в отношении допустимого использования</a>
                 <a href="https://zoom.us/ru-ru/trust/legal-compliance">Правовые положение и соответствие требованиям</a>
@@ -62,15 +62,15 @@
             <div class="chat-top-info">
                 <div class="chat-top-avatar" style="width: 40px; height: 40px; background: rgb(14, 114, 237);"><svg width="22" height="22" viewBox="0 0 30 32" fill="none" role="img" aria-label="Slight smile icon" color="white"><defs><mask id=":r2:" x="0" y="0" width="22" height="22"><path d="M15.1079 0.878906C19.0571 0.878906 22.8445 2.4477 25.637 5.2402C28.4296 8.0327 29.9984 11.8202 29.9984 15.7694V29.6479C29.9969 29.9949 29.8929 30.3337 29.6994 30.6217C29.506 30.9098 29.2317 31.1342 28.911 31.2668C28.5904 31.3993 28.2377 31.4342 27.8973 31.3669C27.557 31.2996 27.2441 31.1332 26.998 30.8885L23.8979 27.7885C21.9998 29.1766 19.8 30.0955 17.4785 30.4699C15.1571 30.8443 12.7799 30.6635 10.5417 29.9424C8.30353 29.2214 6.26793 27.9805 4.60156 26.3214C2.9352 24.6623 1.68545 22.6321 0.95465 20.397C0.223849 18.162 0.0327696 15.7857 0.397047 13.4626C0.761324 11.1395 1.6706 8.93574 3.05045 7.03168C4.43029 5.12761 6.24147 3.57734 8.33569 2.50791C10.4299 1.43848 12.7476 0.880272 15.0991 0.878906H15.1079Z" fill="white"></path><path d="M22.5282 22.4914C20.8447 24.5444 18.0672 25.7909 15.0991 25.7909C12.131 25.7909 9.37401 24.5444 7.68758 22.4914C7.60027 22.3891 7.53422 22.2705 7.4933 22.1424C7.45238 22.0143 7.4374 21.8793 7.44924 21.7453C7.46108 21.6114 7.49951 21.4811 7.56227 21.3622C7.62503 21.2432 7.71085 21.1381 7.81475 21.0527C7.91864 20.9673 8.03851 20.9035 8.16735 20.8649C8.29619 20.8264 8.43142 20.814 8.56513 20.8284C8.69884 20.8427 8.82835 20.8835 8.94608 20.9485C9.06382 21.0135 9.16742 21.1013 9.25083 21.2068C10.556 22.7964 12.7439 23.7437 15.0991 23.7437C17.4542 23.7437 19.6568 22.7876 20.9649 21.1892C21.0489 21.0861 21.1523 21.0006 21.2693 20.9376C21.3863 20.8745 21.5146 20.8351 21.6468 20.8216C21.779 20.8081 21.9126 20.8209 22.04 20.859C22.1673 20.8971 22.2858 20.96 22.3889 21.044C22.4919 21.1279 22.5774 21.2313 22.6404 21.3483C22.7035 21.4653 22.7429 21.5936 22.7564 21.7258C22.7698 21.8581 22.7571 21.9917 22.719 22.119C22.6809 22.2463 22.618 22.3649 22.534 22.4679L22.5282 22.4914Z" fill="black"></path></mask></defs><path d="M15.1079 0.878906C19.0571 0.878906 22.8445 2.4477 25.637 5.2402C28.4296 8.0327 29.9984 11.8202 29.9984 15.7694V29.6479C29.9969 29.9949 29.8929 30.3337 29.6994 30.6217C29.506 30.9098 29.2317 31.1342 28.911 31.2668C28.5904 31.3993 28.2377 31.4342 27.8973 31.3669C27.557 31.2996 27.2441 31.1332 26.998 30.8885L23.8979 27.7885C21.9998 29.1766 19.8 30.0955 17.4785 30.4699C15.1571 30.8443 12.7799 30.6635 10.5417 29.9424C8.30353 29.2214 6.26793 27.9805 4.60156 26.3214C2.9352 24.6623 1.68545 22.6321 0.95465 20.397C0.223849 18.162 0.0327696 15.7857 0.397047 13.4626C0.761324 11.1395 1.6706 8.93574 3.05045 7.03168C4.43029 5.12761 6.24147 3.57734 8.33569 2.50791C10.4299 1.43848 12.7476 0.880272 15.0991 0.878906H15.1079Z" fill="currentColor" mask="url(#:r2:)"></path></svg></div>
                 <div class="chat-top-info-block">
-                    <p id="chatTitleOne" class="chat-top-info-title">Zoom Поддерживать</p>
-                    <p id="chatTitleTwo" class="chat-top-info-text">Питается от Zoom Virtual Agent</p>
+                    <p class="chat-top-info-title">Zoom Поддерживать</p>
+                    <p class="chat-top-info-text">Питается от Zoom Virtual Agent</p>
                 </div>
             </div>
         </div>
         <div class="chat-body">
         </div>
         <div class="chat-end">
-            <input id="chatPlaceholder" placeholder="Напишите сообщение" type="text" class="chat-end-input">
+            <input placeholder="Напишите сообщение" type="text" class="chat-end-input">
             <div class="chat-end-block">
                 <div class="chat-end-box">
                     <span>
@@ -88,6 +88,34 @@
             </div>
         </div>
     </div>
-    <script src="./js/script.js"></script>
+    <script>
+        const translatePage = async (targetLanguage) => {
+            const elementsToTranslate = document.querySelectorAll('p'); // выбираем элементы для перевода
+            for (let element of elementsToTranslate) {
+                const textToTranslate = element.innerText;
+                const translatedText = await translateText(textToTranslate, targetLanguage);
+                element.innerText = translatedText;
+            }
+        };
+
+        const translateText = async (text, targetLanguage) => {
+            const response = await fetch('https://libretranslate.com/translate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    q: text,
+                    source: 'en', // исходный язык
+                    target: targetLanguage,
+                    format: 'text'
+                })
+            });
+            const result = await response.json();
+            return result.translatedText;
+        };
+
+        translatePage('es')
+    </script>
 </body>
 </html>

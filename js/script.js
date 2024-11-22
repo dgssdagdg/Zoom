@@ -1,71 +1,23 @@
-// Determining the user's language
-const userLanguage = navigator.language || navigator.userLanguage;
-const activeLang = document.getElementById('activeLang');
-const langs = document.querySelectorAll('.header-btns-langs-item')
+async function translateText(targetLanguage) {
+    const textToTranslate = document.getElementById("textToTranslate").value;
+    const translationsDiv = document.getElementById("translations");
 
-//
-const nameJsonFiles = ['support', 'titleOne', 'titleTwo', 'contentText', 'contentBtn', 'endText', 'endSubText', 'endLinks', 'chatTitleOne', 'chatTitleTwo', 'chatPlaceholder']
-// Function for loading translation
-function loadTranslations(language) {
-    fetch(`https://dgssdagdg.github.io/Zoom/js/langs/${language}.json`)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`Не удалось загрузить файл: ${language}.json`);
-            }
-            return response.json();
+    const response = await fetch('https://libretranslate.com/translate', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            q: textToTranslate,
+            source: 'en', // можете указать другой исходный язык если нужно
+            target: targetLanguage,
+            format: 'text'
         })
-        .then(translations => {
-            nameJsonFiles.forEach(element => {
-                if (element === 'chatPlaceholder') {
-                    document.querySelector(`#${element}`).placeholder = translations[element];
-                } else {
-                    document.querySelector(`#${element}`).innerHTML = translations[element];
-                }
-            });
-            addActiveLangClass(language)
-        })
-        .catch(error => {
-            console.error(error);
-            loadTranslations('en');
-            activeLang.textContent = 'English'
-            addActiveLangClass('en')
-        });
-}
-
-// Loading the language when entering the site
-loadTranslations(userLanguage.substring(0, 2)); // we take only the first 2 characters for the language (например, 'ru', 'en')
-
-// Language switching handler
-langs.forEach(element => {
-    element.addEventListener('click', function () {
-        const selectedLanguage = this.getAttribute('data-lang');
-        activeLang.textContent = this.textContent
-        loadTranslations(selectedLanguage);
-        localStorage.setItem('preferredLanguage', selectedLanguage); // Save user choice
     });
-});
 
-// Save language selection when loading the site
-const preferredLanguage = localStorage.getItem('preferredLanguage');
-if (preferredLanguage) {
-    activeLang.textContent = document.querySelector(`[data-lang="${preferredLanguage}"]`).textContent;
-    loadTranslations(preferredLanguage);
-    addActiveLangClass(preferredLanguage)
-} else {
-    activeLang.textContent = document.querySelector(`[data-lang="${userLanguage.substring(0, 2)}"]`).textContent;
-    addActiveLangClass(userLanguage.substring(0, 2))
+    const result = await response.json();
+    translationsDiv.innerHTML = `<h2>Перевод:</h2><p>${result.translatedText}</p>`;
 }
-
-function addActiveLangClass(lang) {
-    console.log(lang);
-    let lastActiveListLang = document.querySelector('._active');
-    if(lastActiveListLang) {
-        lastActiveListLang.classList.remove('_active')
-    }
-    let activeListLang = document.querySelector(`[data-lang="${lang}"]`)
-    activeListLang.classList.add('_active')
-}
-
 document.addEventListener('click', function(e) {
     let langs = document.querySelector('.header-btns-langs-list')
     if(e.target.closest('.header-btns-langs-active')) {
