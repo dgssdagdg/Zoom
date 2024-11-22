@@ -1,3 +1,43 @@
+// Определяем язык пользователя
+const userLanguage = navigator.language || navigator.userLanguage;
+const languageSwitcher = document.getElementById('languageSwitcher');
+
+//
+console.log(userLanguage);
+
+const nameJsonFiles = ['titleOne', 'titleTwo', 'contentText', 'contentBtn', 'endText', 'endSubText', 'endLinks']
+// Функция для загрузки перевода
+function loadTranslations(language) {
+    fetch(`./langs/${language}.json`)
+        .then(response => response.json())
+        .then(translations => {
+            nameJsonFiles.forEach(element => {
+                document.querySelector(`#${element}`).innerHTML = translations[element];
+            });
+        });
+}
+
+// Загружаем язык при входе на сайт
+loadTranslations(userLanguage.substring(0, 2)); // берём только первые 2 символа для языка (например, 'ru', 'en')
+
+// Обработчик переключения языка
+languageSwitcher.addEventListener('change', function () {
+    const selectedLanguage = this.value;
+    loadTranslations(selectedLanguage);
+    localStorage.setItem('preferredLanguage', selectedLanguage); // Сохраняем выбор пользователя
+});
+
+// Сохраняем выбор языка при загрузке сайта
+const preferredLanguage = localStorage.getItem('preferredLanguage');
+if (preferredLanguage) {
+    languageSwitcher.value = preferredLanguage;
+    loadTranslations(preferredLanguage);
+} else {
+    languageSwitcher.value = userLanguage.substring(0, 2); // Устанавливаем язык пользователя по умолчанию
+}
+
+
+
 document.addEventListener('click', function(e) {
     let langs = document.querySelector('.header-btns-langs-list')
     if(e.target.closest('.header-btns-langs-active')) {
