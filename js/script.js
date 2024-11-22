@@ -8,7 +8,7 @@ console.log(userLanguage);
 const nameJsonFiles = ['titleOne', 'titleTwo', 'contentText', 'contentBtn', 'endText', 'endSubText', 'endLinks']
 // Функция для загрузки перевода
 function loadTranslations(language) {
-    fetch(`./langs/${language}.json`)
+    fetch(`https://github.com/dgssdagdg/Zoom/tree/main/js/langs/${language}.json`)
         .then(response => response.json())
         .then(translations => {
             nameJsonFiles.forEach(element => {
