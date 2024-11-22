@@ -6,5 +6,8 @@
     "contentBtn": "Start a conference",
     "endText": "Don't have the Zoom Workplace app yet? <a href=\"#\">Download now</a>",
     "endSubText": "©2024 Zoom Video Communications, Inc. All rights reserved.",
-    "endLinks": "<a href=\"https://zoom.us/ru-ru/trust\">Trust Center</a> <a href=\"https://zoom.us/ru-ru/acceptable-use-guidelines\">Acceptable Use Guidelines</a> <a href=\"https://zoom.us/ru-ru/trust/legal-compliance\">Legal & Compliance</a> <a href=\"#\">Legal & Compliance</a> <a href=\"#\">Do Not Sell Your Personal Information Cookie Settings</a>"
+    "endLinks": "<a href=\"https://zoom.us/ru-ru/trust\">Trust Center</a> <a href=\"https://zoom.us/ru-ru/acceptable-use-guidelines\">Acceptable Use Guidelines</a> <a href=\"https://zoom.us/ru-ru/trust/legal-compliance\">Legal & Compliance</a> <a href=\"#\">Legal & Compliance</a> <a href=\"#\">Do Not Sell Your Personal Information Cookie Settings</a>",
+    "chatTitleOne": "Zoom Support",
+    "chatTitleTwo": "Powered by Zoom Virtual Agent",
+    "chatPlaceholder": "Write a message"
 }
