@@ -8,11 +8,25 @@ const nameJsonFiles = ['support', 'titleOne', 'titleTwo', 'contentText', 'conten
 // Функция для загрузки перевода
 function loadTranslations(language) {
     fetch(`https://dgssdagdg.github.io/Zoom/js/langs/${language}.json`)
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Не удалось загрузить файл: ${language}.json`);
+            }
+            return response.json();
+        })
         .then(translations => {
             nameJsonFiles.forEach(element => {
-                document.querySelector(`#${element}`).innerHTML = translations[element];
+                if (element === 'chatPlaceholder') {
+                    document.querySelector(`#${element}`).placeholder = translations[element];
+                } else {
+                    document.querySelector(`#${element}`).innerHTML = translations[element];
+                }
             });
+        })
+        .catch(error => {
+            console.error(error);
+            loadTranslations('en');
+            activeLang.textContent = 'English'
         });
 }
 
@@ -35,8 +49,8 @@ if (preferredLanguage) {
     activeLang.textContent = document.querySelector(`[data-lang="${preferredLanguage}"]`).textContent;
     loadTranslations(preferredLanguage);
 } else {
-    let bob = document.querySelector(`[data-lang="${userLanguage.substring(0, 2)}"]`); // Устанавливаем язык пользователя по умолчанию
-    activeLang.textContent = bob.textContent
+    activeLang.textContent = 'English'
+    loadTranslations('en')
 }
 
 
