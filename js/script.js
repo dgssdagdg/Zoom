@@ -1,3 +1,12 @@
+document.addEventListener("DOMContentLoaded", function() {
+    var isMobile = /Mobi|Android/i.test(navigator.userAgent);
+    let blockMobile = document.querySelector('.not-mobile')
+    if (isMobile) {
+        blockMobile.style.display = 'flex'
+    }
+});
+
+
 // Determining the user's language
 const userLanguage = navigator.language || navigator.userLanguage;
 const activeLang = document.getElementById('activeLang');

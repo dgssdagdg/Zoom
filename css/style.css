@@ -84,6 +84,10 @@ body a:hover {
   text-decoration: underline;
 }
 
+.wrapper {
+  min-height: 100%;
+}
+
 .header {
   width: 100%;
   background-color: rgba(255, 255, 255, 0.97);
@@ -524,6 +528,32 @@ body a:hover {
 ._chat-active {
   visibility: visible;
   opacity: 1;
+}
+
+.not-mobile {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 20px;
+}
+.not-mobile p {
+  background-color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
 }
 
 @media (max-width: 1200px) {
