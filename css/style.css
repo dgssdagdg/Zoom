@@ -545,6 +545,7 @@ body a:hover {
       -ms-flex-pack: center;
           justify-content: center;
   padding: 20px;
+  z-index: 10;
 }
 .not-mobile p {
   background-color: white;
